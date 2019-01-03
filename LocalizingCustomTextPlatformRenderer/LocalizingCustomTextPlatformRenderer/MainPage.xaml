@@ -6,10 +6,13 @@
              x:Class="LocalizingCustomTextPlatformRenderer.MainPage">
    <ContentPage.Content>
         <Grid Padding="0,30,0,0">
-            <syncfusion:SfCalendar>
+            <syncfusion:SfCalendar ShowInlineEvents="true" DataSource="{Binding CalendarInlineEvents}">
                 <syncfusion:SfCalendar.Behaviors>
                     <local:CalendarBehavior/>
                 </syncfusion:SfCalendar.Behaviors>
+                <syncfusion:SfCalendar.BindingContext>
+                    <local:ViewModel/>
+                </syncfusion:SfCalendar.BindingContext>
             </syncfusion:SfCalendar>
         </Grid>
 </ContentPage.Content>
