@@ -14,11 +14,11 @@ namespace LocalizingCustomTextPlatformRenderer
         protected override void OnAttachedTo(SfCalendar bindable)
         {
             calendar = bindable;
-
+            // Creating Events in SfCalendar
             CalendarEventCollection calendarInlineEvents = new CalendarEventCollection();
             calendar.ShowInlineEvents = true;
             calendar.MoveToDate = new DateTime(2018, 02, 14, 12, 0, 0);
-            // Set Localization to Calendar
+            // Set Locale to Calendar
             calendar.Locale = new System.Globalization.CultureInfo("fr-FR");
 
             calendarInlineEvents.Add(new CalendarInlineEvent()
@@ -28,6 +28,8 @@ namespace LocalizingCustomTextPlatformRenderer
                 Subject = "Meeting",
                 IsAllDay = true
             });
+
+            //Add collection of events as source of SfCalendar
             calendar.DataSource = calendarInlineEvents;
 
             base.OnAttachedTo(bindable);
